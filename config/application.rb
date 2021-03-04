@@ -1,4 +1,4 @@
-require_relative 'boot'
+require_relative "boot"
 
 require "rails"
 # Pick the frameworks you want:
@@ -30,6 +30,19 @@ module WonderfulEditor
     # the framework and any gems in your application.
 
     # Don't generate system test files.
-    config.generators.system_tests = nil
+    config.generators do |g|
+      g.javascripts false
+      g.stylesheets false
+      g.helper false
+      g.template_engine false
+      g.test_framework :rspec,
+                        fixtures: true,
+                        view_spec: false,
+                        routing_specs: false,
+                        helper_specs: false,
+                        controller_specs: false,
+                        request_specs: true
+    end
+    config.api_only = true
   end
 end
