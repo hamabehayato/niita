@@ -44,9 +44,9 @@ group :development, :test do
   gem "rubocop-rails"
   gem "rubocop-rspec"
 
-  gem 'rspec-rails', '~> 4.0.2'
-  gem "faker"
   gem "factory_bot_rails"
+  gem "faker"
+  gem "rspec-rails", "~> 4.0.2"
 end
 
 group :development do
