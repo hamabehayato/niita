@@ -29,7 +29,7 @@ gem "jbuilder", "~> 2.7"
 gem "bootsnap", ">= 1.4.2", require: false
 
 # JSONをいい感じに整形する
-gem 'active_model_serializers', '~> 0.10.0'
+gem "active_model_serializers", "~> 0.10.0"
 # トークン形式のユーザー認証をする仕組みを導入する gem
 gem "devise_token_auth"
 
@@ -59,7 +59,7 @@ group :development do
   # model や rspec のファイルに、対象の table の schema を書き出してくれる
   gem "annotate"
 
-  gem 'rails-erd'
+  gem "rails-erd"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

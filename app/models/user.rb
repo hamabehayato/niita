@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :name, presence: true
 
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
