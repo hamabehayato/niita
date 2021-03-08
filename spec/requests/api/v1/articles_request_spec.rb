@@ -29,7 +29,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
       it "その記事を表示する" do
         subject
         res = JSON.parse(response.body)
-        
+
         expect(response).to have_http_status(:ok)
         expect(res["id"]).to eq article.id
         expect(res["title"]).to eq article.title
