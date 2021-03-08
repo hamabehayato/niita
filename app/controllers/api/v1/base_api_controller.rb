@@ -1,4 +1,2 @@
-class api.v1::BaseApiController < ApplicationController
-  def method_name
-  end
+class Api::V1::BaseApiController < ApplicationController
 end

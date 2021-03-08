@@ -1,8 +1,5 @@
 class Api::V1::ArticlePreviewSerializer < ActiveModel::Serializer
-  attributes :id,
-             :title,
-             :body
+  attributes :id, :title, :updated_at
 
-  has_many :comments
-  has_many :article_likes
+  belongs_to :user
 end
