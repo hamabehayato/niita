@@ -121,7 +121,7 @@ RSpec.describe "Api::V1::Auth::Registrations", type: :request do
       let(:user) { create(:user) }
       let!(:headers) { user.create_new_auth_token }
 
-      fit "ログアウトできる" do
+      it "ログアウトできる" do
         # subject
         # expect(user.reload.tokens).to be_blank
         expect { subject }.to change { user.reload.tokens }.from(be_present).to(be_blank)
