@@ -119,10 +119,10 @@ RSpec.describe "Api::V1::Auth::Registrations", type: :request do
 
     context "ユーザがログインしているとき" do
       let(:user) { create(:user) }
-      let(:headers) { create(:user).create_new_auth_token }
+      let!(:headers) { user.create_new_auth_token }
 
-      it "ログアウトできる" do
-        subject
+      fit "ログアウトできる" do
+        # subject
         # expect(user.reload.tokens).to be_blank
         expect { subject }.to change { user.reload.tokens }.from(be_present).to(be_blank)
         expect(response).to have_http_status(:ok)
