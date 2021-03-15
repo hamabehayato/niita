@@ -94,15 +94,14 @@ RSpec.describe "Api::V1::Articles", type: :request do
     subject { delete(api_v1_article_path(article_id), headers: headers) }
 
     # devise_token_auth の導入が完了後に削除
-    let(:current_user) { create(:user) }
-    let(:article_id) { article.id }
     let(:user) { create(:user) }
-    let!(:headers) { current_user.create_new_auth_token }
+    let(:article_id) { article.id }
+    let!(:headers) { user.create_new_auth_token }
 
     context "自分の記事を削除しようとするとき" do
       let!(:article) { create(:article, user: user) }
 
-      it "記事を削除できる" do
+      fit "記事を削除できる" do
         expect { subject }.to change { Article.count }.by(-1)
         expect(response).to have_http_status(:no_content)
       end
