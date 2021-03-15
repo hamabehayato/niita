@@ -77,3 +77,6 @@ RSpec/LetSetup:
 
 RSpec/AnyInstance:
   Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false

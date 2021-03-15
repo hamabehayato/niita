@@ -131,7 +131,6 @@ RSpec.describe "Api::V1::Auth::Registrations", type: :request do
 
     context "誤った情報を送信したとき" do
       let(:user) { create(:user) }
-      let!(:token) { user.create_new_auth_token }
       let!(:headers) { { "access-token" => "", "token-type" => "", "client" => "", "expiry" => "", "uid" => "" } }
 
       it "ログアウトできない" do
