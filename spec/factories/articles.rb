@@ -3,6 +3,14 @@ FactoryBot.define do
     title { Faker::Base.regexify("[aあ]{30}") }
     body { Faker::Base.regexify("[bい]{400}") }
     user
+
+    trait :draft do
+      status { 0 }
+    end
+
+    trait :publishd do
+      status { 1 }
+    end
   end
 
   factory :article_title_over, class: "Article" do
