@@ -99,7 +99,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
     context "でたらめな指定で記事を作成するとき" do
       let(:params) { { article: attributes_for(:article, status: :foo) } }
 
-      fit "エラーになる" do
+      it "エラーになる" do
         expect { subject }.to raise_error(ArgumentError)
       end
     end
