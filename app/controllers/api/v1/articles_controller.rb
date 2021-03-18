@@ -9,7 +9,7 @@ module Api::V1
 
     def show
       article = Article.published.find(params[:id])
-      render json: article
+      render json: article, serializer: Api::V1::ArticleSerializer
     end
 
     def create
@@ -26,12 +26,6 @@ module Api::V1
     def destroy
       article = current_user.articles.find(params[:id])
       article.destroy!
-    end
-
-    def toggle_status
-      article = Article.find(params[:article_id])
-      article.toggle_status!
-      render json: article, serializer: Api::V1::ArticleSerializer, notice: "ステータスを変更しました"
     end
 
     private
