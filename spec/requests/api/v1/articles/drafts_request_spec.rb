@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Api::V1::Articles::Drafts", type: :request do
   let(:current_user) { create(:user) }
-  let!(:headers) { article.user.create_new_auth_token }
+  let!(:headers) { current_user.create_new_auth_token }
 
   # indexのテスト
   describe "GET /api/v1/articles/drafts" do
