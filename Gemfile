@@ -10,6 +10,8 @@ gem "pg", ">= 0.18", "< 2.0"
 # Use Puma as the app server
 gem "puma", "~> 4.1"
 # Use SCSS for stylesheets
+gem 'rack-cors'
+
 gem "sass-rails", ">= 6"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem "webpacker", "~> 4.0"
@@ -32,6 +34,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "active_model_serializers", "~> 0.10.0"
 # トークン形式のユーザー認証をする仕組みを導入する gem
 gem "devise_token_auth"
+gem "config"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,7 +46,6 @@ group :development, :test do
   # 静的解析ツール& rails に関する解析
   gem "rubocop-rails"
   gem "rubocop-rspec"
-
   gem "factory_bot_rails"
   gem "faker"
   gem "rspec-rails", "~> 4.0.2"
@@ -60,6 +62,10 @@ group :development do
   gem "annotate"
 
   gem "rails-erd"
+end
+
+group :production do
+  gem "mysql2"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

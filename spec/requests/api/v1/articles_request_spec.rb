@@ -23,7 +23,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
   end
 
   # showのテスト
-  describe "GET api/v1/article", type: :request do
+  describe "GET api/v1/articles/:id", type: :request do
     subject { get(api_v1_article_path(article_id)) }
 
     context "指定した id の記事が存在する かつ" do
@@ -64,7 +64,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
   end
 
   # createのテスト
-  describe "POST /articles" do
+  describe "POST /api/v1/articles" do
     subject { post(api_v1_articles_path, params: params, headers: headers) }
 
     let(:user) { create(:user) }

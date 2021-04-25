@@ -17,4 +17,5 @@ test:
 production:
   <<: *default
   database: wonderful_editor_production
+  username: wonderful_editor
   password: <%= ENV['WONDERFUL-EDITOR_DATABASE_PASSWORD'] %>
