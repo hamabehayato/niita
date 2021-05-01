@@ -32,6 +32,8 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "active_model_serializers", "~> 0.10.0"
 # トークン形式のユーザー認証をする仕組みを導入する gem
 gem "devise_token_auth"
+# アップロードした画像を保存する
+gem 'carrierwave'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
