@@ -1,7 +1,7 @@
 <template>
   <v-app-bar app dark color="#3085DE">
     <router-link to="/" class="header-link">
-      <v-toolbar-title class="white--text font-weight-bold">WonderfulEditor</v-toolbar-title>
+      <v-toolbar-title class="white--text font-weight-bold">Niita</v-toolbar-title>
     </router-link>
 
     <v-spacer></v-spacer>
